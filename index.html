@@ -1,0 +1,68 @@
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <strong>张三</strong>
+      </div>
+      <ul class="nav-links">
+        <li>关于</li>
+        <li>项目</li>
+        <li>联系</li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()">切换模式</button>
+    </nav>
+    <div class="header-content">
+      <h1>张三</h1>
+      <p>Web 开发者 | 前端工程师 | 喜欢创造有趣的东西</p >
+    </div>
+  </header>
+
+  <div class="section" id="about">
+    <h2>关于我</h2>
+    <p>你好！我是张三，一位热爱前端开发的程序员，熟悉 HTML、CSS、JavaScript 和 React。热衷于构建高质量的用户界面和交互体验。</p >
+  </div>
+
+  <div class="section" id="projects">
+    <h2>我的项目</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>项目一：个人博客</h3>
+        <p>使用 Vue 构建的响应式个人博客，支持 Markdown 编辑和评论功能。</p >
+        
+      </div>
+      <div class="project">
+        <h3>项目二：Todo 应用</h3>
+        <p>一个简单的待办事项列表应用，使用 React Hooks 编写，可保存到本地存储。</p >
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="section contact" id="contact">
+    <h2>联系我</h2>
+    <p>Email: zhangsan@example.com</p >
+    <p>GitHub: </p >
+  </div>
+
+  <footer>
+    &copy; 2025 张三. 版权所有。
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // 平滑滚动（可选）
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').slice(1);
+        const targetEl = document.getElementById(targetId);
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
